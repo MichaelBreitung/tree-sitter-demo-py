@@ -1,0 +1,23 @@
+# parser
+
+[build-system]
+requires = ["setuptools"]  
+build-backend = "setuptools.build_meta" 
+
+[project]
+name = "parser_ts"
+version = "0.1.0"
+description = "Parser for Source Code that uses Tree Sitter"
+# url = ""
+# license = ""
+# authors = []
+
+classifiers = ["Programming Language :: Python :: 3"]
+
+dependencies = ["tree-sitter", "tree-sitter-kotlin"]
+
+[tool.setuptools.packages.find]
+include = ["parser_ts", "parser_ts.kotlin"]
+[tool.setuptools.package-data]
+my_package = ["py.typed"]
+

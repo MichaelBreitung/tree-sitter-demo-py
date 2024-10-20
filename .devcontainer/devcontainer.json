@@ -1,0 +1,43 @@
+{
+    "name": "parser_dev_tooling",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service": "parser-dev",
+    "workspaceFolder": "/home/developer/develop",
+    "shutdownAction": "stopCompose",
+    "containerUser": "developer",
+    "updateRemoteUserUID": true,
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "redhat.vscode-yaml",
+                "ms-azuretools.vscode-docker",
+                "eamodio.gitlens",
+                "esbenp.prettier-vscode",
+                "ms-python.python",
+                "ms-python.mypy-type-checker",
+                "ms-python.pylint",
+                "ms-python.black-formatter",
+                "tamasfe.even-better-toml"
+            ],
+            "settings": {
+                "editor.tabSize": 2,
+                "editor.formatOnSave": true,
+                "editor.codeActionsOnSave": {},
+                "editor.trimAutoWhitespace": true,
+                "editor.defaultFormatter": "ms-python.black-formatter",
+                "[json]": {
+                  "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[dockerfile]": {
+                  "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+                },
+                "mypy-type-checker.importStrategy": "fromEnvironment",
+                "mypy-type-checker.args": ["--strict", "--show-error-codes", "--cache-dir", "build/.mypy_cache"],
+                "python.pythonPath": "/usr/bin/python3",
+                "python.analysis.autoImportCompletions": true,
+                "python.analysis.indexing": true
+            }
+        }
+    }
+}

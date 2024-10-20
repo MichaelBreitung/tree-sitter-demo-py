@@ -1,0 +1,17 @@
+
+# IDE
+.vscode/settings.json
+.idea
+
+# build
+build
+dist
+*.egg-info
+
+# project specific
+__pycache__
+.pytest_cache
+.mypy_cache
+venv
+
+
